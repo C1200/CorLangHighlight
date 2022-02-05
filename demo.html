@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/C1200/CorLangHighlight/CorLangHighlight.min.js"></script>
+  </head>
+  <body>
+    <pre class="language-corlang">
+      <code>
+var string_var = "a string"
+var int_var = 10
+var float_var = 3.141
+
+func my_cool_function(name)
+    print("Hello, " + name + "!")
+    print("This is a very cool function")
+end
+
+func my_sl_func() -> "this is a singleline func"
+
+my_cool_function("Whoever is reading")
+
+var array_of_truth = [true, "truthy", 2.11, 8]
+
+print("escape\"characters")
+
+if true and true then
+    print("The logic works")
+else
+    print("You shouldn't see this")
+end
+      </code>
+    </pre>
+    <script>
+      hljs.registerLanguage("corlang", corlang);
+      hljs.highlightAll()
+    </script>
+  </body>
+</html>
