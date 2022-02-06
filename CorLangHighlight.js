@@ -1,15 +1,17 @@
-var corlang = () => {
+var corlang = (hljs) => {
   const BUILT_INS = [
     "null",  "true",  "false",
     "print", "input", "input_int",
-    "type"
+    "type",  "import", "throw",
+    "len"
   ];
   const KEYWORDS = [
-    "var",  "and",   "or",
-    "not",  "if",    "then",
-    "elif", "else",  "for",
-    "to",   "while", "step",
-    "func", "exit",  "end"
+    "var",    "and",      "or",
+    "not",    "if",       "then",
+    "elif",   "else",     "for",
+    "to",     "while",    "step",
+    "func",   "exit",     "end",
+    "return", "continue", "break"
   ];
   const IDENTIFIER = "[A-Za-z_][A-Za-z0-9_]*";
   
@@ -18,6 +20,7 @@ var corlang = () => {
     contains: [
       hljs.APOS_STRING_MODE,
       hljs.QUOTE_STRING_MODE,
+      hljs.HASH_COMMENT_MODE,
       {
         scope: "built_in",
         begin: `(${BUILT_INS.join("|")})`
