@@ -23,7 +23,7 @@ var corlang = (hljs) => {
       hljs.HASH_COMMENT_MODE,
       {
         scope: "built_in",
-        begin: `(${BUILT_INS.join("|")})`
+        begin: `(${BUILT_INS.join("|")})( +|\()`
       },
       {
         scope: "number",
