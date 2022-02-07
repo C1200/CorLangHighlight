@@ -22,8 +22,9 @@ var corlang = (hljs) => {
       hljs.QUOTE_STRING_MODE,
       hljs.HASH_COMMENT_MODE,
       {
+        $pattern: IDENTIFIER,
         scope: "built_in",
-        begin: `(${BUILT_INS.join("|")})( +|\()`
+        begin: `(${BUILT_INS.join("|")})`
       },
       {
         scope: "number",
