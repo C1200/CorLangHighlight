@@ -14,18 +14,18 @@ var corlang = (hljs) => {
     "return", "continue", "break"
   ];
   const IDENTIFIER = "[A-Za-z_][A-Za-z0-9_]*";
-  
+
+  const COR_KEYWORDS = {
+    keyword: KEYWORDS,
+    built_in: BUILT_INS.join(" ")
+  }
+    
   return {
-    keywords: KEYWORDS,
+    keywords: COR_KEYWORDS,
     contains: [
       hljs.APOS_STRING_MODE,
       hljs.QUOTE_STRING_MODE,
       hljs.HASH_COMMENT_MODE,
-      {
-        $pattern: IDENTIFIER,
-        scope: "built_in",
-        begin: `(${BUILT_INS.join("|")})`
-      },
       {
         scope: "number",
         begin: "[0-9]{1,}(\.[0-9]{1,})?"
